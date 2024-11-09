@@ -99,6 +99,8 @@ func (a *App) createProduct(w http.ResponseWriter, r *http.Request) {
 		respondWithError(w, http.StatusBadRequest, "Invalid request payload")
 		return
 	}
+
+	// Here need to append pvt into book name using grpc
 	defer r.Body.Close()
 
 	if err := p.CreateProduct(a.DB); err != nil {

@@ -1,0 +1,19 @@
+syntax = "proto3";
+package book;
+
+option go_package = "github.com/CrudOperation/proto";
+
+
+message BookRequest {
+    string name = 1;
+}
+
+message BookResponse {
+    string book_name = 1;
+}
+
+service BookService {
+    rpc Book (BookRequest) returns (BookResponse);
+    //rpc GreetManyTimes(GreetRequest) returns (stream GreetResponse);
+    //rpc GreetEveryone(stream GreetRequest) returns (stream GreetResponse);
+}
